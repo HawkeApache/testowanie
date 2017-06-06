@@ -25,7 +25,7 @@ public class PowMathTest
     }
 
     @Test
-    public void binomialShouldThrowExceptionWhenNSmallerThanK()
+    public void PowShouldThrowException()
     {
         //Arrange
         expectedException.expect(IllegalArgumentException.class);
