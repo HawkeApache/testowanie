@@ -25,6 +25,28 @@ public class PowMathTest
     }
 
     @Test
+    public void PowShouldReturnProperValue()
+    {
+        //Arrange
+        //Act
+        int result = pow(-2,4);
+
+        //Assert
+        assertEquals(16,result);
+    }
+
+    @Test
+    public void PowShouldReturnOne()
+    {
+        //Arrange
+        //Act
+        int result = pow(0,0);
+
+        //Assert
+        assertEquals(1,result);
+    }
+
+    @Test
     public void PowShouldThrowException()
     {
         //Arrange
@@ -33,6 +55,20 @@ public class PowMathTest
 
         //Act
         pow(5,-2);
+
+        //Assert
+        fail();
+    }
+
+    @Test
+    public void PowShouldAlsoThrowException()
+    {
+        //Arrange
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("exponent (-2) must be >= 0");
+
+        //Act
+        pow(-5,-2);
 
         //Assert
         fail();
