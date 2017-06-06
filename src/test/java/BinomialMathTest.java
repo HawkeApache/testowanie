@@ -12,7 +12,8 @@ public class BinomialMathTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void binomialShouldReturnCorrectValueMin(){
+    public void binomialShouldReturnCorrectValueMin()
+    {
         //Arrange
         //Act
         int result = binomial(0,0);
