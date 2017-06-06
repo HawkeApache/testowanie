@@ -7,7 +7,7 @@ public class Math {
     public static void main(String[] args)
     {
 
-        System.out.println(IntMath.pow(0, 0));
+        System.out.println(IntMath.pow(2, -100));
 
     }
 }
