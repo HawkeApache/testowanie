@@ -12,70 +12,69 @@ public class BinomialMathTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void binomialShouldReturnCorrectValueMin()
-    {
+    public void binomialShouldReturnCorrectValueMin() {
         //Arrange
         //Act
-        int result = binomial(0,0);
+        int result = binomial(0, 0);
 
         //Assert
-        assertEquals(1,result);
+        assertEquals(1, result);
     }
 
     @Test
-    public void binomialShouldReturnCorrectValue(){
+    public void binomialShouldReturnCorrectValue() {
         //Arrange
         //Act
-        int result = binomial(10,3);
+        int result = binomial(10, 3);
 
         //Assert
-        assertEquals(120,result);
+        assertEquals(120, result);
     }
 
     @Test
-    public void binomialShouldReturnIntegerMaxValueWhenResultNotFitInInt(){
+    public void binomialShouldReturnIntegerMaxValueWhenResultNotFitInInt() {
         //Arrange
         //Act
-        int result = binomial(300000,5);
+        int result = binomial(300000, 5);
 
         //Assert
-        assertEquals(Integer.MAX_VALUE,result);
+        assertEquals(Integer.MAX_VALUE, result);
     }
 
     @Test
-    public void binomialShouldThrowExceptionWhenNSmallerThanK(){
+    public void binomialShouldThrowExceptionWhenNSmallerThanK() {
         //Arrange
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("k (15) > n (10)");
 
         //Act
-        binomial(10,15);
+        binomial(10, 15);
 
         //Assert
         fail();
     }
 
     @Test
-    public void binomialShouldThrowExceptionWhenKIsNegative(){//3
+    public void binomialShouldThrowExceptionWhenKIsNegative() {//3
         //Arrange
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("k (-3) must be >= 0");
 
         //Act
-        binomial(12,-3);
+        binomial(12, -3);
 
         //Assert
         fail();
     }
 
     @Test
-    public void binomialShouldThrowExceptionWhenNIsNegative(){
+    public void binomialShouldThrowExceptionWhenNIsNegative() {
         //Arrange
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("n (-5) must be >= 0");
 
         //Act
-        binomial(-5,2);
+        binomial(-5, 2);
 
         //Assert
         fail();
