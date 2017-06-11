@@ -67,6 +67,7 @@ public class BinomialMathTest {
         fail();
     }
 
+
     @Test
     public void binomialShouldThrowExceptionWhenNIsNegative() {
         //Arrange
@@ -78,5 +79,62 @@ public class BinomialMathTest {
 
         //Assert
         fail();
+    }
+
+//========EXTRA TESTS========//
+    @Test
+    public void binomialShouldThrowExceptionWhenNIsMinusOne() {
+        //Arrange
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("n (-1) must be >= 0");
+
+        //Act
+        binomial(-1, 2);
+
+        //Assert
+        fail();
+    }
+
+    @Test
+    public void binomialShouldThrowExceptionWhenNIsIntegerMinValue() {
+        //Arrange
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("n (-2147483648) must be >= 0");
+
+        //Act
+        binomial(Integer.MIN_VALUE, 2);
+
+        //Assert
+        fail();
+    }
+
+    @Test
+    public void binomialShouldReturnOneWhenNAndKAreBothIntegerMaxValue(){
+        //Arrange
+        //Act
+        int result = binomial(Integer.MAX_VALUE, Integer.MAX_VALUE);
+
+        //Assert
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void binomialShouldReturnOneWhenNAndKAreBothOne(){
+        //Arrange
+        //Act
+        int result = binomial(1, 1);
+
+        //Assert
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void binomialShouldReturnOneWhenNAndKAreBothZero(){
+        //Arrange
+        //Act
+        int result = binomial(0, 0);
+
+        //Assert
+        assertEquals(1, result);
     }
 }
