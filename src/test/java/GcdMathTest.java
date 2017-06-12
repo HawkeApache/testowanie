@@ -84,4 +84,52 @@ public class GcdMathTest {
         //Assert
         assertEquals(5, gcd);
     }
+
+    //EXTRA TESTS
+
+    @Test
+    public void oneOfArgumentIsIntegerMaxValue(){
+        //Arrange
+        int a = 1;
+        int b = Integer.MAX_VALUE;
+        //Act
+        int gcd = IntMath.gcd(a, b);
+        //Assert
+        assertEquals(1, gcd);
+    }
+
+    @Test
+    public void oneOfArgumentIsIntegerMinValue() {
+        //Arrange
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("a (" + Integer.MIN_VALUE +") must be >= 0");
+        int a = Integer.MIN_VALUE;
+        int b = 1;
+        //Act
+        int gcd = IntMath.gcd(a, b);
+        //Assert
+        fail();
+    }
+
+    @Test
+    public void bothArgumentsAreIntegerMaxValue(){
+        //Arrange
+        int a = Integer.MAX_VALUE;
+        int b = Integer.MAX_VALUE;
+        //Act
+        int gcd = IntMath.gcd(a, b);
+        //Assert
+        assertEquals(Integer.MAX_VALUE, gcd);
+    }
+
+    @Test
+    public void bothArgumentsEquals1(){
+        //Arrange
+        int a = 1;
+        int b = 1;
+        //Act
+        int gcd = IntMath.gcd(a, b);
+        //Assert
+        assertEquals(1, gcd);
+    }
 }
