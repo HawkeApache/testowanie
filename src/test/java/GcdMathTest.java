@@ -6,13 +6,14 @@ import org.junit.rules.ExpectedException;
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-public class GcdMathTest {
-
+public class GcdMathTest
+{
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void bothArgumentAreNotNegative() {
+    public void bothArgumentAreNotNegative()
+    {
         //Arrange
         int a = 125;
         int b = 25;
@@ -123,7 +124,8 @@ public class GcdMathTest {
     }
 
     @Test
-    public void bothArgumentsEquals1(){
+    public void bothArgumentsEquals1()
+    {
         //Arrange
         int a = 1;
         int b = 1;
@@ -132,4 +134,5 @@ public class GcdMathTest {
         //Assert
         assertEquals(1, gcd);
     }
+
 }

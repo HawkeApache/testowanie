@@ -138,4 +138,24 @@ public class BinomialMathTest {
         //Assert
         assertEquals(1, result);
     }
+
+    @Test
+    public void binomialShouldReturnOneWhenNIsOneAndKIs0(){
+        //Arrange
+        //Act
+        int result = binomial(1, 0);
+
+        //Assert
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void binomialShouldReturnOneWhenNIsMaxAndKIs0(){
+        //Arrange
+        //Act
+        int result = binomial(Integer.MAX_VALUE, 0);
+
+        //Assert
+        assertEquals(1, result);
+    }
 }
