@@ -1,18 +1,18 @@
-import com.google.common.math.IntMath;
-
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PowPerformanceTest {
+import static com.google.common.math.IntMath.binomial;
+
+public class BinomialPerformanceTest {
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
         List<TimeStorage> storages = new LinkedList<>();
         TimeStorage timeStorage;
-        for (int i = 0; i <= 35; i++) { //MaxInt = 2^31-1
+        for (int i = 0; i <= 100000; i= i+100) {
             timeStorage = new TimeStorage();
             try (Timer timer = new Timer(timeStorage)) {
-                int a = IntMath.pow(2, i);
+                int a = binomial(i, 0);
             } catch (Exception e) {
                 e.printStackTrace();
             }
