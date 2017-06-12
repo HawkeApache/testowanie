@@ -18,6 +18,6 @@ public class BinomialPerformanceTest {
             }
             storages.add(timeStorage);
         }
-        storages.stream().map(TimeStorage::getTime).forEach(System.out::println);
+        storages.stream().map(TimeStorage::getTime).filter(s -> s < 1000).forEach(System.out::println);
     }
 }
