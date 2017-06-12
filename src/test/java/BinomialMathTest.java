@@ -22,7 +22,8 @@ public class BinomialMathTest {
     }
 
     @Test
-    public void binomialShouldReturnCorrectValue() {
+    public void binomialShouldReturnCorrectValue()
+    {
         //Arrange
         //Act
         int result = binomial(10, 3);

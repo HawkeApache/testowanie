@@ -35,6 +35,8 @@ public class GcdMathTest {
         fail();
     }
 
+
+
     @Test
     public void bothArgumentsAreNegative() {
         //Arrange
